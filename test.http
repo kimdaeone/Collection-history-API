@@ -1,0 +1,22 @@
+### 1. 전체 수거 이력 조회
+GET http://localhost:8080/api/history
+
+### 2. 신규 수거 이력 등록 (정상)
+POST http://localhost:8080/api/history
+Content-Type: application/json
+
+{
+  "location": "서울 강남구 매장",
+  "date": "2026-02-10",
+  "amount": 15.5
+}
+
+### 3. 유효성 검증 테스트 (음수 입력 - 에러 발생해야 함)
+POST http://localhost:8080/api/history
+Content-Type: application/json
+
+{
+  "location": "서울 서초구 매장",
+  "date": "2026-02-10",
+  "amount": -5.0
+}
